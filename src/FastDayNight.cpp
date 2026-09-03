@@ -257,7 +257,7 @@ void ApplyPersistentEnvironment(Map* map, uint32 zoneId)
         AppliedWeather.insert(key);
     }
     else if (AppliedWeather.erase(key))
-        map->ClearZoneWeather(zoneId);
+        map->SetZoneWeather(zoneId, WEATHER_STATE_FINE, 0.0f);
 
     std::optional<LightOverride> light =
         GetEffectiveValue(zoneId, &EnvironmentState::Light);
