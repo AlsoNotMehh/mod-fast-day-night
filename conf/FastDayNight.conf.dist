@@ -1,0 +1,69 @@
+#
+# FastDayNight
+#
+# Accelerates only the visual day/night cycle sent to game clients.
+# Server timers, cooldowns, auctions, events and database timestamps continue
+# using normal real time.
+#
+
+#
+# Enable the accelerated visual clock.
+#
+# Default: 1
+
+FastDayNight.Enable = 1
+
+#
+# Visual time multiplier.
+#
+# Examples:
+#   1  = normal real-time clock
+#   2  = one visual day every 12 real hours
+#   3  = one visual day every 8 real hours
+#        (roughly 4 hours of daylight and 4 hours of night)
+#   24 = one visual day every real hour
+#   48 = one visual day every 30 real minutes
+#   288 = one visual day every 5 real minutes
+#
+# Allowed range: 0.1 to 288
+# Default: 3
+
+FastDayNight.Speed = 3
+
+#
+# Maximum multiplier accepted by GM commands.
+#
+# Allowed range: 1 to 1440
+# Default: 288
+
+FastDayNight.MaximumSpeed = 288
+
+#
+# Offset applied after acceleration, in hours.
+#
+# Examples:
+#   0  = no offset
+#   6  = move the visual clock six hours forward
+#   -6 = move the visual clock six hours backward
+#
+# Allowed range: -23 to 23
+# Default: 0
+
+FastDayNight.OffsetHours = 0
+
+#
+# Re-send the visual clock periodically to correct client drift.
+# This does not reset or freeze the cycle.
+#
+# Allowed range: 30 to 3600 seconds
+# Default: 300
+
+FastDayNight.SyncIntervalSeconds = 300
+
+#
+# Default transition duration for GM light changes.
+#
+# Allowed range: 0 to 60000 milliseconds
+# Default: 3000
+
+FastDayNight.DefaultLightFadeMilliseconds = 3000
