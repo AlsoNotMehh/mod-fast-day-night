@@ -252,8 +252,7 @@ void ApplyPersistentEnvironment(Map* map, uint32 zoneId)
         GetEffectiveValue(zoneId, &EnvironmentState::Weather);
     if (Config.Enabled && weather)
     {
-        map->SetZoneWeather(
-            zoneId, weather->State, weather->Intensity, weather->Abrupt);
+        map->SetZoneWeather(zoneId, weather->State, weather->Intensity);
         AppliedWeather.insert(key);
     }
     else if (AppliedWeather.erase(key))
