@@ -336,25 +336,20 @@ void RefreshAppliedEnvironment()
 void LoadConfig()
 {
     Config.Enabled =
-        sConfigMgr->GetOption<bool>("FastDayNight.Enable", true);
+        sConfigMgr->GetOption<bool>("FastDayNight.Enable", true, false);
     Config.MaximumSpeed = std::clamp(
-        sConfigMgr->GetOption<float>(
-            "FastDayNight.MaximumSpeed", 288.0f),
+        sConfigMgr->GetOption<float>("FastDayNight.MaximumSpeed", 288.0f, false),
         1.0f, 1440.0f);
     Config.DefaultSpeed = ClampSpeed(
-        sConfigMgr->GetOption<float>(
-            "FastDayNight.Speed", DefaultVisualSpeed));
+        sConfigMgr->GetOption<float>("FastDayNight.Speed", DefaultVisualSpeed, false));
     Config.OffsetHours = std::clamp(
-        sConfigMgr->GetOption<int32>(
-            "FastDayNight.OffsetHours", 0),
+        sConfigMgr->GetOption<int32>("FastDayNight.OffsetHours", 0, false),
         int32(-23), int32(23));
     Config.SyncIntervalSeconds = std::clamp(
-        sConfigMgr->GetOption<uint32>(
-            "FastDayNight.SyncIntervalSeconds", 300),
+        sConfigMgr->GetOption<uint32>("FastDayNight.SyncIntervalSeconds", 300, false),
         uint32(30), uint32(3600));
     Config.DefaultLightFadeMilliseconds = std::clamp(
-        sConfigMgr->GetOption<uint32>(
-            "FastDayNight.DefaultLightFadeMilliseconds", 3000),
+        sConfigMgr->GetOption<uint32>("FastDayNight.DefaultLightFadeMilliseconds", 3000, false),
         uint32(0), uint32(60000));
 
     if (!RuntimeInitialized)
